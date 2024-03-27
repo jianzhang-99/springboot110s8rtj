@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.TudiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.TudiEntity" id="tudiMap">
+        <result property="dikuaibianhao" column="dikuaibianhao"/>
+        <result property="mianji" column="mianji"/>
+        <result property="turangqingkuang" column="turangqingkuang"/>
+        <result property="nongchangzhuzhanghao" column="nongchangzhuzhanghao"/>
+        <result property="nongchangzhu" column="nongchangzhu"/>
+        <result property="tuditupian" column="tuditupian"/>
+        <result property="tudiweizhi" column="tudiweizhi"/>
+        <result property="turangzhiliang" column="turangzhiliang"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.TudiVO" >
+		SELECT * FROM tudi  tudi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.TudiVO" >
+		SELECT  tudi.* FROM tudi  tudi 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.TudiView" >
+
+		SELECT  tudi.* FROM tudi  tudi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.TudiView" >
+		SELECT * FROM tudi  tudi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>

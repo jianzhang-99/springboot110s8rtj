@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YongpinrukuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.YongpinrukuEntity" id="yongpinrukuMap">
+        <result property="yongpinbianhao" column="yongpinbianhao"/>
+        <result property="yongpinmingcheng" column="yongpinmingcheng"/>
+        <result property="yongpinleixing" column="yongpinleixing"/>
+        <result property="gongyingshang" column="gongyingshang"/>
+        <result property="yongpintupian" column="yongpintupian"/>
+        <result property="nongchangzhuzhanghao" column="nongchangzhuzhanghao"/>
+        <result property="kucun" column="kucun"/>
+        <result property="caigoudanjia" column="caigoudanjia"/>
+        <result property="heji" column="heji"/>
+        <result property="caigoushijian" column="caigoushijian"/>
+        <result property="caigoubeizhu" column="caigoubeizhu"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YongpinrukuVO" >
+		SELECT * FROM yongpinruku  yongpinruku         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YongpinrukuVO" >
+		SELECT  yongpinruku.* FROM yongpinruku  yongpinruku 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YongpinrukuView" >
+
+		SELECT  yongpinruku.* FROM yongpinruku  yongpinruku 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YongpinrukuView" >
+		SELECT * FROM yongpinruku  yongpinruku <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
